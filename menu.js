@@ -93,7 +93,7 @@ class Menu {
 //viewing the lists using a loop and allowing users to create/delete food
     viewList() {
         let selection = prompt("Enter the number of the list you want to see:");
-        if (selection > 0 && selection < this.lists.length) {
+        if (selection > -1 && selection < this.lists.length) {
             this.selectedList = this.lists[selection];
             let description = 'GroceryList: ' + this.selectedList.type + '\n';
             description += ' ' + this.selectedList.describe() + '\n'; 
@@ -112,7 +112,7 @@ class Menu {
     }
     deleteList() {
         let selection = prompt('Enter the selection of the food that you wish to delete: ');
-        if (selection > 0 && selection < this.lists.length) {
+        if (selection > -1 && selection < this.lists.length) {
             this.lists.splice(selection,1);
         }
     }
@@ -124,7 +124,7 @@ class Menu {
     }
     deleteFood() {
         let selection = prompt('Enter the selection of the food that you want to delete');
-        if (selection > 0 && selection < this.selectedList.foods.length) {
+        if (selection > -1 && selection < this.selectedList.foods.length) {
             this.selectedList.foods.splice(selection, 1);
         }
     }
